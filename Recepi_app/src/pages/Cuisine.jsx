@@ -9,20 +9,40 @@ function Cuisine() {
     const [cuisine,setCuisine]=useState([]);
     let params =useParams();
     const getCusine = async(name)=> {
-      const res = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?cuisine=${name}&apiKey=${apikey}`)
-         .then(async()=>{
+       await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apikey}&cuisine=${name}`)
+         .then(async(res)=>{
         const recepies =await res;
-        console.log(recepies.results);
-         // setCuisine(recipes.results)
-         })
+        //console.log(recepies.data.results);
+         setCuisine(recepies.data.results);
+         }).catch((e)=>(console.log(e)))
     }
     useEffect(()=>{
          getCusine(params.id)
-         //console.log(params.id);
+         console.log(params.id);
     },[params.id])
   return (
-    <div>Cuisine</div>
+    <Grid>
+      {
+        cuisine.map((item)=>{
+          return(
+
+            <div>
+                    <img src={item.image} alt={item.title} />
+                    <h4>{item.title}</h4>
+          </div>
+            )
+
+        })
+      }
+    </Grid>
   )
 }
+
+const Grid =styled.div`
+display: grid;
+grid-template-columns:auto auto auto;
+grid-gap:2rem;
+margin:50px 0px;
+`
 
 export default Cuisine
