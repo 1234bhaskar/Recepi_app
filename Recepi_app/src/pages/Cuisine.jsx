@@ -9,7 +9,7 @@ function Cuisine() {
     const [cuisine,setCuisine]=useState([]);
     let params =useParams();
     const getCusine = async(name)=> {
-       await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apikey}&cuisine=${name}`)
+       const res =await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apikey}&cuisine=${name}`)
          .then(async(res)=>{
         const recepies =await res;
         //console.log(recepies.data.results);

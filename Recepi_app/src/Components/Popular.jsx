@@ -12,7 +12,7 @@ function Popular() {
     useEffect(() => {
       getPopular();
     },[])
-   const apikey="553295c8cdb84287a0e47d3b9bca6230";
+    const apikey="553295c8cdb84287a0e47d3b9bca6230";
    //const apikey=process.env.VITE_API_KEY;
     //as we do not want our api limit to be reached we can store our data in local storage
     const getPopular = async ()=>{
