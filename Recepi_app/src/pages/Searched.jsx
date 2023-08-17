@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react'
 import { useState,useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 
@@ -25,10 +25,12 @@ export function Searched() {
     <Grid>
        { searchRecepi.map((item)=>{
         return (
-
+              
             <div key={item.id}>
+              <Link to={"/recepi/"+item.id}>
                  <img src={item.image} alt={item.title} />
                  <h4>{item.title}</h4>
+              </Link>
               </div>
                   )
         

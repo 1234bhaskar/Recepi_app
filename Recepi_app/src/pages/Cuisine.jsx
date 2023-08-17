@@ -18,7 +18,7 @@ function Cuisine() {
     }
     useEffect(()=>{
          getCusine(params.id)
-         console.log(params.id);
+         //console.log(params.id);
     },[params.id])
   return (
     <Grid>
@@ -26,9 +26,11 @@ function Cuisine() {
         cuisine.map((item)=>{
           return(
 
-            <div>
+            <div key={item.id}>
+              <Link to={"/recepi/"+item.id}>
                     <img src={item.image} alt={item.title} />
                     <h4>{item.title}</h4>
+              </Link>
           </div>
             )
 

@@ -4,6 +4,7 @@ import { useEffect,useState } from 'react';
 import styled from "styled-components";
 import {Splide,SplideSlide } from "@splidejs/react-splide";
 import '@splidejs/react-splide/css';
+import { Link } from 'react-router-dom';
 function Veggie() {
   const[Veggie,setVeggie]=useState([]);
     useEffect(() => {
@@ -20,7 +21,7 @@ function Veggie() {
            const data = res.data.recipes;
            localStorage.setItem("Veggie",JSON.stringify(data))
            setVeggie(data);
-           console.log(data);
+           //console.log(data);
           })
         }
       }
@@ -41,9 +42,11 @@ function Veggie() {
                         return(
                           <SplideSlide key={recipes.id}>
                           <Card key={recipes.id}>
+                            <Link to={'/recepi/'+recipes.id}>
                              <p>{recipes.title}</p>
                              <img src={recipes.image} alt={recipes.title} />
                              <Gradient/>
+                            </Link>
                           </Card>
                           </SplideSlide>
                         )
