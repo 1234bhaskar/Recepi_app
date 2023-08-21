@@ -89,9 +89,10 @@ position:relative;
 
 img{
   border-radius:5px;
-  height:100vh
-  width:100%;
-  object-fit:cover;
+    object-fit:cover;
+    width:100%;
+    height:37vh;
+
 }
 p{
   position:absolute;

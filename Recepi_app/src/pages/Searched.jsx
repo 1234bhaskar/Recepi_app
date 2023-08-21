@@ -44,4 +44,10 @@ display: grid;
 grid-template-columns:auto auto auto;
 grid-gap:2rem;
 margin:50px 0px;
+h4{
+width:100%;
+text-align:center;
+color:black;
+text-decoration:none;
+}
 `

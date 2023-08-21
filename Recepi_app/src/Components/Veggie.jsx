@@ -66,7 +66,7 @@ z-index:3;
 position:absolute;
 width:100vw;
 height:100vh;
-background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5))
+background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5));
 
 `;                  
                   
@@ -83,7 +83,7 @@ position:relative;
 
 img{
   border-radius:5px;
-  height:100vh
+  height:50vh;
   width:100%;
   object-fit:cover;
 }

@@ -21,7 +21,12 @@ function Cuisine() {
          //console.log(params.id);
     },[params.id])
   return (
-    <Grid>
+    <Grid 
+    animate={{opacity:1}}
+    initial={{opacity:0}}
+    exit={{opacity:0}}
+    transition={{duration:0.5}}
+    >
       {
         cuisine.map((item)=>{
           return(
@@ -40,11 +45,19 @@ function Cuisine() {
   )
 }
 
-const Grid =styled.div`
+const Grid =styled(motion.div)`
 display: grid;
 grid-template-columns:auto auto auto;
 grid-gap:2rem;
 margin:50px 0px;
+
+h4{
+width:100%;
+text-align:center;
+color:black;
+text-decoration:none;
+}
 `
+
 
 export default Cuisine
