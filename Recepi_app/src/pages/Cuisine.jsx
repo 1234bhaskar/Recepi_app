@@ -5,11 +5,13 @@ import { Link,useParams  } from 'react-router-dom';
 import axios from 'axios';
 //import { apikey } from '../Components/Popular';
 function Cuisine() {
-           const apiKey=import.meta.env.VITE_API_KEY;
+         
+  const apiKey=import.meta.env.VITE_API_KEY;
     const [cuisine,setCuisine]=useState([]);
     let params =useParams();
     const getCusine = async(name)=> {
-       const res =await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${name}`)
+       
+      const res =await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${name}`)
          .then(async(res)=>{
         const recepies =await res;
         //console.log(recepies.data.results);

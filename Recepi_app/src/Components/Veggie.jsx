@@ -6,6 +6,7 @@ import {Splide,SplideSlide } from "@splidejs/react-splide";
 import '@splidejs/react-splide/css';
 import { Link } from 'react-router-dom';
 function Veggie() {
+  
   const apiKey=import.meta.env.VITE_API_KEY;
   const[Veggie,setVeggie]=useState([]);
     useEffect(() => {
@@ -17,7 +18,8 @@ function Veggie() {
       if(check){
        setVeggie(JSON.parse(check));
       }else{
-         const res = await axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=11&tags=vegetarian`).then((res)=>{
+        
+        const res = await axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=11&tags=vegetarian`).then((res)=>{
            const data = res.data.recipes;
            localStorage.setItem("Veggie",JSON.stringify(data))
            setVeggie(data);

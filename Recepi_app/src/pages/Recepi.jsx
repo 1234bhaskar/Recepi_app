@@ -9,11 +9,13 @@ export function Recepi() {
     const params=useParams();
     const [initial,final]=useState({});
     const [active,setActive]=useState("instructions");
-           const apiKey=import.meta.env.VITE_API_KEY;
+           
+    const apiKey=import.meta.env.VITE_API_KEY;
 
 
   async function functionHandler (recepi){
-        await axios.get(`https://api.spoonacular.com/recipes/${recepi}/information?apiKey=${apiKey}`).then( async(res)=>{
+       
+    await axios.get(`https://api.spoonacular.com/recipes/${recepi}/information?apiKey=${apiKey}`).then( async(res)=>{
           const data= await res.data ;
           final(data);
          //console.log(data);
