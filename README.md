@@ -13,3 +13,7 @@ Since this is a vite app so you need to run this via vite run command
 <li>styled-components</li>
 <li>react-icons</li>
 </ul>
+
+# Api
+i have used 
+<a href="https://spoonacular.com/food-api">Spoonacular</a> for fetching food related details 
