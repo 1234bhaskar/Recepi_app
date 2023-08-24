@@ -3,7 +3,8 @@ this is a small recipe app made with Reactjs
 #Running Locally
 Since this is a vite app so you need to run this via vite run command
 <h1>npm run dev</h1>
-#techStack
+
+# TechStack
 <ul>
 <li>React</li>
 <li>axios</li>
