@@ -6,18 +6,18 @@ import {Splide,SplideSlide } from "@splidejs/react-splide";
 import '@splidejs/react-splide/css';
 import { Link } from 'react-router-dom';
 function Veggie() {
+  const apiKey=import.meta.env.VITE_API_KEY;
   const[Veggie,setVeggie]=useState([]);
     useEffect(() => {
       getVeggei();
     },[])
-    const apikey="553295c8cdb84287a0e47d3b9bca6230";
     //as we do not want our api limit to be reached we can store our data in local storage
     const getVeggei = async ()=>{
       const check= localStorage.getItem('Veggie');
       if(check){
        setVeggie(JSON.parse(check));
       }else{
-         const res = await axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${apikey}&number=11&tags=vegetarian`).then((res)=>{
+         const res = await axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=11&tags=vegetarian`).then((res)=>{
            const data = res.data.recipes;
            localStorage.setItem("Veggie",JSON.stringify(data))
            setVeggie(data);

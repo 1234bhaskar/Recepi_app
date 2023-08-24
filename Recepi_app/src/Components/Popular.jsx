@@ -13,15 +13,14 @@ function Popular() {
     useEffect(() => {
       getPopular();
     },[])
-    const apikey="553295c8cdb84287a0e47d3b9bca6230";
-   //const apikey=process.env.VITE_API_KEY;
+      const apiKey=import.meta.env.VITE_API_KEY;
     //as we do not want our api limit to be reached we can store our data in local storage
     const getPopular = async ()=>{
       const check= localStorage.getItem('popular');
       if(check){
        setPopular(JSON.parse(check));
       }else{
-         const res = await axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${apikey}&number=11`).then((res)=>{
+         const res = await axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=11`).then((res)=>{
            const data = res.data.recipes;
            localStorage.setItem("popular",JSON.stringify(data))
            setPopular(data);

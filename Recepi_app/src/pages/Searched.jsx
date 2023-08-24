@@ -8,9 +8,10 @@ import { styled } from 'styled-components';
 export function Searched() {
   const [searchRecepi,setSearchRecepi]=useState([]);
   const params=useParams();
-       const apikey="553295c8cdb84287a0e47d3b9bca6230";
+         const apiKey=import.meta.env.VITE_API_KEY;
+
     const getSearched=async(name)=>{
-     const res = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apikey}&query=${name}`).then((res)=>{
+     const res = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${name}`).then((res)=>{
            const data = res.data.results;
            setSearchRecepi(data);
     }
