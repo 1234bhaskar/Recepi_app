@@ -15,5 +15,5 @@ Since this is a vite app so you need to run this via vite run command
 </ul>
 
 # Api
-i have used [Spoonacular](https://spoonacular.com/food-api)for fetching food related details 
+i have used [Spoonacular](https://spoonacular.com/food-api) for fetching food related details 
 
